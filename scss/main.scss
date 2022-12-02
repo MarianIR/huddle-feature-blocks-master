@@ -1,0 +1,275 @@
+@import "variables", "reset", "mixin";
+
+body {
+  width: 100%;
+}
+
+.main-section {
+  width: 100%;
+  background-image: url("/images/bg-hero-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $neutralColor1;
+  padding-bottom: 2rem;
+
+  .page-header {
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    .logo {
+      width: 10rem;
+      height: 1.5rem;
+    }
+    .try-free {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5rem;
+      background-color: #fdfdfd;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $neutralColor2;
+      box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.22);
+    }
+  }
+  .get-started {
+    margin: 2rem auto;
+    width: 90%;
+    @media (min-width: 1266px) {
+      display: flex;
+    }
+    .build-community {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      @media (min-width: 1266px) {
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+      .main-heading {
+        padding: 2rem 0;
+        margin: 0 auto;
+        max-width: 50rem;
+        font-size: clamp(2rem, 6vw, 3rem);
+      }
+      .community-paragraph {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        max-width: 50rem;
+        margin: 0 auto;
+      }
+      .start-for-free {
+        @include get-started-btn;
+        @media (min-width: 1266px) {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 25rem 0 0 27rem;
+        }
+      }
+    }
+    .main-image {
+      display: block;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 60rem;
+      height: auto;
+      @media (min-width: 1266px) {
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+.grow-together {
+  @include sections;
+  margin-top: 5rem;
+  .grow-together-text {
+    @include articles;
+    .second-heading {
+      @include headings;
+    }
+    .paragraph {
+      @include paragraphs;
+    }
+  }
+  .illustration {
+    @include illustrations;
+  }
+}
+
+.flowing-conversations {
+  @include sections;
+  @media (min-width: 1266px) {
+    flex-direction: row;
+  }
+
+  .flowing-conversations-text {
+    @include articles;
+
+    .second-heading {
+      @include headings;
+    }
+    .paragraph {
+      @include paragraphs;
+    }
+  }
+  .illustration {
+    @include illustrations;
+  }
+}
+
+.your-users {
+  @include sections;
+
+  .your-users-text {
+    @include articles;
+
+    .second-heading {
+      @include headings;
+    }
+    .paragraph {
+      @include paragraphs;
+    }
+  }
+  .illustration {
+    @include illustrations;
+  }
+}
+
+.footer-section {
+  width: 100%;
+  background-color: $neutralColor2;
+  z-index: -1000;
+  margin-top: 15rem;
+  padding-bottom: 3rem;
+  @media (min-width: 1266px) {
+    display: flex;
+    flex-direction: column;
+  }
+  .get-started-container {
+    display: block;
+    position: absolute;
+    margin: -9rem auto 0;
+    width: 90%;
+    max-width: 70rem;
+    background-color: #fdfdfd;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    text-align: center;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    @media (min-width: 1266px) {
+      margin-bottom: 10rem;
+    }
+    .your-community {
+      @include headings;
+    }
+    .start-for-free {
+      @include get-started-btn;
+    }
+  }
+  .logo {
+    margin: 15rem auto 2rem 3rem;
+    filter: brightness(0) invert(1);
+    width: 14rem;
+    height: 3.5rem;
+    @media (min-width: 1266px) {
+      margin: 5rem auto 2rem 3rem;
+    }
+  }
+  .all-informations {
+    width: 100%;
+    @media (min-width: 1266px) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .address {
+      @media (min-width: 1266px) {
+        max-width: 33%;
+      }
+      .location {
+        display: flex;
+        align-items: flex-start;
+        max-width: 30rem;
+        margin: 1rem auto 0 3rem;
+        .location-icon {
+          margin: 2rem auto;
+          width: 3rem;
+          height: 3rem;
+        }
+        .footer-paragraph {
+          @include paragraphs;
+          color: #fff;
+        }
+      }
+      .phone {
+        @extend .location;
+        align-items: center;
+        .phone-icon {
+          width: 3rem;
+          height: 3rem;
+        }
+        .phone-number {
+          @include paragraphs;
+          margin: 0;
+          color: #fff;
+        }
+      }
+      .email {
+        @extend .phone;
+        .email-icon {
+          @extend .phone-icon;
+        }
+        .email-address {
+          @extend .phone-number;
+        }
+      }
+    }
+    .about-us {
+      margin: 2rem auto 2rem 3rem;
+      @media (min-width: 1266px) {
+        display: grid;
+        grid-template-columns: auto auto;
+        max-width: 33%;
+      }
+      .information {
+        color: #fff;
+        padding: 1rem;
+        font-size: 2rem;
+      }
+    }
+    .social-media {
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
+      @media (min-width: 1266px) {
+        max-width: 33%;
+      }
+      .social-media-icon {
+        @include socialMediaIcons;
+      }
+    }
+  }
+  .copyright {
+    margin: 2rem auto;
+    text-align: center;
+    font-size: $fontSize;
+    color: #fff;
+  }
+
+  .attr-box {
+    text-align: center;
+    .attribution {
+      @extend .copyright;
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+}
